@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #4CAF50;
+    --danger-color: #f44336;
+    --warning-color: #ff9800;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clock {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    color: white;
+}
+
+.registros {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.registros-list {
+    margin-top: 10px;
+}
+
+.registro-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.registro-entrada {
+    border-left: 4px solid var(--primary-color);
+}
+
+.registro-almoco-saida {
+    border-left: 4px solid var(--warning-color);
+}
+
+.registro-almoco-retorno {
+    border-left: 4px solid var(--warning-color);
+    background-color: #fff3e0;
+}
+
+.registro-saida {
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Estilo para botões desabilitados */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Adicionar ícones aos registros */
+.registro-item::before {
+    font-family: "Material Icons";
+    margin-right: 8px;
+}
+
+.registro-entrada::before {
+    content: "login";
+    color: var(--primary-color);
+}
+
+.registro-almoco-saida::before {
+    content: "restaurant";
+    color: var(--warning-color);
+}
+
+.registro-almoco-retorno::before {
+    content: "work";
+    color: var(--warning-color);
+}
+
+.registro-saida::before {
+    content: "logout";
+    color: var(--danger-color);
+}
+
+@media (max-width: 480px) {
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background: #757575;
+    color: white;
+}
+
+.resumo-dia {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.resumo-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.resumo-item .material-icons {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.resumo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumo-info span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.resumo-info strong {
+    font-size: 1.2rem;
+}
+
+.aviso-registros-completos {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.aviso-registros-completos .material-icons {
+    font-size: 24px;
+}
+
+.aviso-registros-completos p {
+    margin: 0;
+    font-weight: 500;
+}

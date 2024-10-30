@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ponto Eletrônico</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const { createClient } = supabase
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulário de Login -->
+        <div class="card" id="loginCard">
+            <h1>Login</h1>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="button" id="btnRegistrar" class="btn btn-secondary">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Card do Ponto (vai ficar escondido até fazer login) -->
+        <div class="card" id="pontoCard" style="display: none;">
+            <h1>Ponto Eletrônico</h1>
+            <div class="clock" id="clock">00:00:00</div>
+            
+            <div class="user-info" id="userInfo">
+                <img id="userAvatar" class="avatar" src="default-avatar.png" alt="Avatar">
+                <span id="userName">Não conectado</span>
+            </div>
+
+            <div class="buttons">
+                <button id="btnEntrada" class="btn btn-primary">Registrar Entrada</button>
+                <button id="btnAlmocoSaida" class="btn btn-warning">Saída Almoço</button>
+                <button id="btnAlmocoRetorno" class="btn btn-warning">Retorno Almoço</button>
+                <button id="btnSaida" class="btn btn-danger">Registrar Saída</button>
+            </div>
+
+            <div class="registros" id="registros">
+                <h2>Registros de Hoje</h2>
+                <div class="registros-list" id="registrosList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
