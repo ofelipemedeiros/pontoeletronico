@@ -18,20 +18,11 @@ const loginCard = document.getElementById('loginCard');
 const pontoCard = document.getElementById('pontoCard');
 const loginForm = document.getElementById('loginForm');
 const btnRegistrar = document.getElementById('btnRegistrar');
-<<<<<<< HEAD
-=======
-const btnLogout = document.getElementById('btnLogout');
-const currentDateElement = document.getElementById('currentDate');
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
 
 // Atualizar relógio
 function updateClock() {
     const now = new Date();
     clockElement.textContent = now.toLocaleTimeString('pt-BR');
-<<<<<<< HEAD
-=======
-    currentDateElement.textContent = now.toLocaleDateString('pt-BR');
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
 }
 
 // Iniciar relógio
@@ -121,16 +112,8 @@ function calcularHorasTrabalhadas(registros) {
         }
     });
 
-<<<<<<< HEAD
     return {
         total: tempoTotal.toFixed(2),
-=======
-    const horasTrabalhadas = Math.floor(tempoTotal);
-    const minutosTrabalhados = Math.round((tempoTotal - horasTrabalhadas) * 60);
-
-    return {
-        total: `${horasTrabalhadas}h ${minutosTrabalhados}m`,
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
         almoco: tempoAlmoco.toFixed(2)
     };
 }
@@ -173,11 +156,7 @@ async function atualizarRegistros() {
                         <span class="material-icons">schedule</span>
                         <div class="resumo-info">
                             <span>Horas Trabalhadas</span>
-<<<<<<< HEAD
                             <strong>${horas.total}h</strong>
-=======
-                            <strong>${horas.total}</strong>
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
                         </div>
                     </div>
                     <div class="resumo-item">
@@ -205,10 +184,6 @@ btnEntrada.addEventListener('click', () => registrarPonto('Entrada'));
 btnAlmocoSaida.addEventListener('click', () => registrarPonto('Saída Almoço'));
 btnAlmocoRetorno.addEventListener('click', () => registrarPonto('Retorno Almoço'));
 btnSaida.addEventListener('click', () => registrarPonto('Saída'));
-<<<<<<< HEAD
-=======
-btnLogout.addEventListener('click', handleLogout);
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
 
 // Função para formatar o registro para exibição
 function formatarRegistro(registro) {
