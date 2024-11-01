@@ -95,26 +95,33 @@ function calcularHorasTrabalhadas(registros) {
             case 'Saída Almoço':
                 saidaAlmoco = hora;
                 if (entrada) {
-                    tempoTotal += (hora - entrada) / 1000 / 60 / 60;
+                    tempoTotal += (hora - entrada) / 1000 / 60 / 60; // Calcula o tempo total até a saída para o almoço
                 }
                 break;
             case 'Retorno Almoço':
                 if (saidaAlmoco) {
-                    tempoAlmoco += (hora - saidaAlmoco) / 1000 / 60 / 60;
+                    tempoAlmoco += (hora - saidaAlmoco) / 1000 / 60 / 60; // Calcula o tempo de almoço
                 }
-                entrada = hora;
+                entrada = hora; // Reinicia a entrada após o retorno do almoço
                 break;
             case 'Saída':
                 if (entrada) {
-                    tempoTotal += (hora - entrada) / 1000 / 60 / 60;
+                    tempoTotal += (hora - entrada) / 1000 / 60 / 60; // Calcula o tempo total até a saída
                 }
                 break;
         }
     });
 
+    // Converte o tempo total e o tempo de almoço para horas e minutos
+    const horasTrabalhadas = Math.floor(tempoTotal);
+    const minutosTrabalhados = Math.round((tempoTotal - horasTrabalhadas) * 60);
+
+    const horasAlmoco = Math.floor(tempoAlmoco);
+    const minutosAlmoco = Math.round((tempoAlmoco - horasAlmoco) * 60);
+
     return {
-        total: tempoTotal.toFixed(2),
-        almoco: tempoAlmoco.toFixed(2)
+        total: `${horasTrabalhadas}h ${minutosTrabalhados}m`,
+        almoco: `${horasAlmoco}h ${minutosAlmoco}m`
     };
 }
 
@@ -156,14 +163,14 @@ async function atualizarRegistros() {
                         <span class="material-icons">schedule</span>
                         <div class="resumo-info">
                             <span>Horas Trabalhadas</span>
-                            <strong>${horas.total}h</strong>
+                            <strong>${horas.total}</strong>
                         </div>
                     </div>
                     <div class="resumo-item">
                         <span class="material-icons">restaurant</span>
                         <div class="resumo-info">
                             <span>Tempo de Almoço</span>
-                            <strong>${horas.almoco}h</strong>
+                            <strong>${horas.almoco}</strong>
                         </div>
                     </div>
                 </div>
