@@ -1,0 +1,75 @@
+:root {
+    --primary-color: #4CAF50;
+    --danger-color: #f44336;
+    --warning-color: #ff9800;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.registro-entrada {
+    background-color: #e8f5e9; /* Cor para entrada */
+}
+
+.registro-almoco-saida {
+    background-color: #fff3e0; /* Cor para saída para almoço */
+}
+
+.registro-almoco-retorno {
+    background-color: #fff3e0; /* Cor para retorno do almoço */
+}
+
+.registro-saida {
+    background-color: #ffebee; /* Cor para saída */
+} 

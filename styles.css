@@ -42,6 +42,14 @@ body {
     color: #333;
 }
 
+.text-subtitle1 {
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    margin-top: 10px; /* Espaçamento acima da data */
+    color: #333; /* Cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
 .user-info {
     display: flex;
     align-items: center;
@@ -162,6 +170,42 @@ body {
 @media (max-width: 480px) {
     .buttons {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .clock {
+        font-size: 2.5rem;
+    }
+
+    .text-subtitle1 {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .clock {
+        font-size: 3rem;
+    }
+
+    .text-subtitle1 {
+        font-size: 1.2em;
     }
 }
 

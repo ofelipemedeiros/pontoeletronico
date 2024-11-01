@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Registros de Ponto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const { createClient } = supabase;
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Dashboard de Registros de Ponto</h1>
+            <div class="user-info" id="userInfo">
+                <img id="userAvatar" class="avatar" src="default-avatar.png" alt="Avatar">
+                <span id="userName">Não conectado</span>
+                <button id="btnLogout" class="btn btn-danger">Sair</button>
+            </div>
+
+            <div class="registros" id="registros">
+                <h2>Registros de Ponto</h2>
+                <table id="registrosTable">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Horário</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registrosList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html> 
