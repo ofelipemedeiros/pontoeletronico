@@ -246,14 +246,4 @@ body {
 .aviso-registros-completos p {
     margin: 0;
     font-weight: 500;
-<<<<<<< HEAD
-=======
-}
-
-/* Estilo para centralizar a data */
-.text-subtitle1 {
-    text-align: center; /* Centraliza o texto */
-    font-size: 1.2em; /* Ajusta o tamanho da fonte, se necessário */
-    margin-top: 10px; /* Espaçamento acima da data */
->>>>>>> d3cb7fc (foi adicionado a data a baixo da hora para identificar o dia do ponto. Também foi adicionado um botão para logout(sair))
 }
